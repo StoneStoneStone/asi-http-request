@@ -2147,7 +2147,10 @@ static NSOperationQueue *sharedQueue = nil;
         // "markAsFinished" will be at the start of main() when we are started
         return;
     }
+    
+    [self retain];
 	[self markAsFinished];
+    [self release];
 }
 
 #pragma mark parsing HTTP response headers
